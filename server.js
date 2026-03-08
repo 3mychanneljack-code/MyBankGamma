@@ -6,16 +6,18 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const PORT = process.env.PORT || 10000;
+
 let users = [
 {
-username: "admin",
-password: "admin",
-balance: 1000
+username:"admin",
+password:"admin",
+balance:1000
 }
 ];
 
-app.get("/", (req,res)=>{
-res.send("MyBank API Running");
+app.get("/",(req,res)=>{
+res.send("MyBank API running");
 });
 
 app.post("/login",(req,res)=>{
@@ -66,6 +68,6 @@ app.get("/admin/users",(req,res)=>{
 res.json(users);
 });
 
-app.listen(3000,()=>{
-console.log("Server running");
+app.listen(PORT,()=>{
+console.log("MyBank server listening on",PORT);
 });
