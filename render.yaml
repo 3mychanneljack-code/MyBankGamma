@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: mybank-api
+    name: mybankonline
     env: node
     plan: free
     buildCommand: npm install
